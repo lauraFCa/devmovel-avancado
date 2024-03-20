@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import MapView, { Marker, Polyline } from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { addLocation } from './services/locationManager';
 
+/**
+ * Map screen component.
+ * Displays a map with the user's current location and a button to navigate to the distance screen.
+ */
 export default function MapScreen() {
     const navigation = useNavigation();
     const [initialRegion, setInitialRegion] = useState(null);
@@ -27,6 +31,11 @@ export default function MapScreen() {
         })();
     }, []);
 
+    /**
+     * Handles the change in user's location.
+     * Adds the new location to the location manager.
+     * @param {Object} newLocation - The new location object.
+     */
     const handleLocationChange = (newLocation) => {
         const { latitude, longitude } = newLocation.coords;
         addLocation(latitude, longitude);

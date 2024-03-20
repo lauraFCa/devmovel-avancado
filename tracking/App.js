@@ -6,6 +6,10 @@ import DistanceScreen from './src/DistanceScreen';
 
 const Stack = createStackNavigator();
 
+/**
+ * The main component of the tracking app.
+ * @returns {React.Component} App
+ */
 export default function App() {
   return (
     <NavigationContainer>

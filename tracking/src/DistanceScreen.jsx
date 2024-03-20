@@ -2,6 +2,12 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { calculateTotalDistance } from './services/calculate';
 
+
+/**
+ * Represents the DistanceScreen component.
+ * This component displays the total distance traveled.
+ * @returns {JSX.Element} The DistanceScreen component.
+ */
 export default function DistanceScreen() {
     const totalDistance = calculateTotalDistance();
 
